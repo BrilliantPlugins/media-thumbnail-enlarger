@@ -2,18 +2,10 @@
 /*
 Plugin Name: Media Thumbnail Enlarger
 Plugin URI: http://ThoughtRefinery.com/
-Description: Makes media thumbs match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
+Description: Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
 Author: Nick Ciske (ThoughtRefinery)
 Version: 1.0
 Author URI: http://thoughtrefinery.com/
-*/
-
-/*
-
-To set a custom size, add the line below to functions.php (or a plugin) and adjust the dimensions as needed
-
-add_image_size( 'mte_thumbnail', 300, 300, true );
-
 */
 
 // Customize media list table
