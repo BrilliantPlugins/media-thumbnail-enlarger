@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Media Library Thumbnail Enlarger ===
 Contributors: nickciske
 Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
