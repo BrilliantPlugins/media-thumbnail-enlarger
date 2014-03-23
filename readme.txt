@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: nickciske
 Donate link: http://thoughtrefinery.com/contact/say-thank-you/
-Tags: comments, spam
+Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
 Stable tag: 1.0
