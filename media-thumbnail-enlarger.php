@@ -31,7 +31,7 @@ function mte_custom_media_column_headings( $columns ) {
 	
 }
 
-// Ouput our custom thumbnail
+// Output our custom thumbnail
 function mte_custom_media_column_content( $column_name, $id ) {
 	
 	echo '<a href="'.get_edit_post_link( $id ).'">';
