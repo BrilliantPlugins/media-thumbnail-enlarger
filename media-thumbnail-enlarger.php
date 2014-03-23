@@ -24,7 +24,7 @@ add_action( 'admin_head','mte_admin_css' );
 function mte_custom_media_column_headings( $columns ) {
 
 	$offset = 2;
-	$new_columns = array_slice($columns, 0, $offset, true) + array('mte_thumb' => '') + array_slice($columns, $offset, NULL, true);
+	$new_columns = array_slice($columns, 0, $offset, true) + array('mte_thumbnail' => '') + array_slice($columns, $offset, NULL, true);
 	unset( $new_columns['icon'] );
 
 	return $new_columns;
