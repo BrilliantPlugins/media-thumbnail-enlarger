@@ -4,7 +4,7 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ To set a custom size, add the line below to functions.php (or a plugin) and adju
 Not yet.
 
 == Changelog ==
+
+= 1.0.2 =
+* Fix 1.0.1 partial deploy
 
 = 1.0.1 =
 * Add screenshots
