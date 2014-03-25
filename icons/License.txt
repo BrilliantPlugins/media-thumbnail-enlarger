@@ -1,4 +1,4 @@
-These icons are from a free version of IcoMoon icons.
+These icons are from a free version of IcoMoon icons:
 https://github.com/Keyamoon/IcoMoon--limited-
 
 Refer to the documentation page to learn more:
