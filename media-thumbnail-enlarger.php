@@ -4,7 +4,7 @@ Plugin Name: Media Library Thumbnail Enlarger
 Plugin URI: http://ThoughtRefinery.com/
 Description: Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
 Author: Nick Ciske (ThoughtRefinery)
-Version: 1.0.3
+Version: 1.1
 Author URI: http://thoughtrefinery.com/
 */
 
@@ -48,6 +48,15 @@ function mte_custom_media_column_content( $column_name, $id ) {
 	
 }
 
+//
+function mte_change_mime_icon($icon, $mime = null, $post_id = null){
+    $icon = str_replace( home_url().'/wp-includes/images/crystal/',  plugins_url('/icons/default/', __FILE__), $icon);
+    $icon = str_replace( '.png',  '.svg', $icon);
+
+    return $icon;
+}
+add_filter('wp_mime_type_icon', 'mte_change_mime_icon');
+
 // Which image size are we using?
 function mte_get_image_size(){
 	
@@ -67,9 +76,11 @@ function mte_admin_css(){
 		return;
 
 	$w = get_option( mte_get_image_size() . '_size_w' );
+	$h = get_option( mte_get_image_size() . '_size_h' );
 
 	echo '<style>';
 	echo '.fixed .column-mte_thumbnail{ width: '.$w.'px; text-align: center; }';
+	echo '.column-mte_thumbnail img{ width: auto; max-height: '.$h.'px; }';
 	echo '</style>';
 
 }
