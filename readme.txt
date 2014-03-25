@@ -4,7 +4,7 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,21 +39,29 @@ There isn't one.
 
 = Is there an options screen where I can set a custom thumbnail size? =
 
-Not yet!
+Yes! Just go to _Settings: Media_ and look for "Media Library Thumbnails".
+
+Note that this will not appear if the size has been hardcoded (see next FAQ).
+
+= Is there a way to hardcode the custom thumbnail size? =
 
 To set a custom size, add the line below to functions.php (or a plugin) and adjust the dimensions as needed.
 
 `add_image_size( 'mte_thumbnail', 300, 300, true );`
 
-= I chose a custom thumbnail size, but the thumbnails are not appearing at that size? =
+= I chose a custom thumbnail size. Why aren't the thumbnails appearing at that size? =
 
-You may need to rebuild your thumbnails (just that size):
+You may need to rebuild your thumbnails:
 https://wordpress.org/plugins/ajax-thumbnail-rebuild/
 
 Or install WP_Thumb so they can be generated on the fly:
 http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
+
+= 1.2 =
+* Add size options to Settings: Media
+* FAQ revisions
 
 = 1.1.1 =
 * Fix archive icon color

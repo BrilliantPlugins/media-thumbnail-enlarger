@@ -4,7 +4,7 @@ Plugin Name: Media Library Thumbnail Enlarger
 Plugin URI: http://ThoughtRefinery.com/
 Description: Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
 Author: Nick Ciske (ThoughtRefinery)
-Version: 1.1.1
+Version: 1.2
 Author URI: http://thoughtrefinery.com/
 */
 
@@ -59,12 +59,15 @@ add_filter('wp_mime_type_icon', 'mte_change_mime_icon');
 
 // Which image size are we using?
 function mte_get_image_size(){
-	
-	if( in_array( 'mte_thumbnail', get_intermediate_image_sizes() ) )
-		return 'mte_thumbnail';
 
-	return 'thumbnail';
-	
+	if( in_array( 'mte_thumbnail', get_intermediate_image_sizes() ) )
+		return 'mte_thumbnail';  // size is hard coded
+
+	if( in_array( 'mte_thumbnail_ud', get_intermediate_image_sizes() ) )
+		return 'mte_thumbnail_ud'; // size is set in settings: media
+
+	return 'thumbnail'; // use WordPress default size
+
 }
 
 // Size column to image
@@ -84,3 +87,44 @@ function mte_admin_css(){
 	echo '</style>';
 
 }
+
+// Add settings
+function mte_register_setting() {
+	
+	if( in_array( 'mte_thumbnail', get_intermediate_image_sizes() ) )
+		return; // size is hard coded
+	
+	register_setting( 'media', 'mte_thumbnail_ud_size_w', 'absint' ); 
+	register_setting( 'media', 'mte_thumbnail_ud_size_h', 'absint' ); 
+	
+	add_settings_field( 'mte_thumbnail_size', 'Media Library Thumbnails', 'mte_setting_display', 'media', 'default' );
+	
+} 
+add_action( 'admin_init', 'mte_register_setting' );
+
+function mte_setting_display(){
+	?>
+	
+	<fieldset><legend class="screen-reader-text"><span>Media Library Thumbnails</span></legend>
+	<label for="mte_thumbnail_ud_size_w">Max Width</label>
+	<input name="mte_thumbnail_ud_size_w" type="number" step="1" min="0" id="mte_thumbnail_ud_size_w" value="<?php echo absint( get_option( 'mte_thumbnail_ud_size_w', 150 ) ); ?>" class="small-text">
+	<label for="mte_thumbnail_ud_size_h">Max Height</label>
+	<input name="mte_thumbnail_ud_size_h" type="number" step="1" min="0" id="mte_thumbnail_ud_size_h" value="<?php echo absint( get_option( 'mte_thumbnail_ud_size_h', 150 ) ); ?>" class="small-text">
+	</fieldset>
+	
+	<?php
+}
+
+// Add image size if not set
+function mte_maybe_add_image_size(){
+
+	if( in_array( 'mte_thumbnail', get_intermediate_image_sizes() ) )
+		return; // size is hard coded
+
+	$w = get_option( 'mte_thumbnail_ud_size_w' );
+	$h = get_option( 'mte_thumbnail_ud_size_h' );
+	
+	add_image_size( 'mte_thumbnail_ud', $w, $h, true );
+
+}
+add_action( 'after_setup_theme', 'mte_maybe_add_image_size' );
