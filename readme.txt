@@ -4,20 +4,18 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
+Makes media library thumbnails match the WordPress thumbnail size or a custom size you define.
 
 == Description ==
 
-Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
+Makes media library thumbnails match the WordPress thumbnail size or allows you to choose a new size in Settings: Media (or hard code a custom size named 'mte_thumbnail').
 
-To set a custom size, add the line below to functions.php (or a plugin) and adjust the dimensions as needed.
-
-`add_image_size( 'mte_thumbnail', 300, 300, true );`
+Also replaces the default "Crystal" file type icons with smoothly scaling SVG icons that better match the WordPress 3.8+ design.
 
 == Screenshots ==
 
@@ -29,13 +27,10 @@ To set a custom size, add the line below to functions.php (or a plugin) and adju
 
 1. Upload the `plugin` folder to the `/wp-content/plugins/` directory or install via the Add New Plugin menu
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Optional: Define a custom size called 'mte_thumbnail' 
+1. Optional: Enter a media library thumbnail size under Settings: Media
+1. Optional: Define a custom size called 'mte_thumbnail' in functions.php
 
 == Frequently Asked Questions ==
-
-= Where is the an options screen? =
-
-There isn't one.
 
 = Is there an options screen where I can set a custom thumbnail size? =
 
@@ -58,6 +53,9 @@ Or install WP_Thumb so they can be generated on the fly:
 http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
+
+= 1.2.2 =
+* Readme fixes
 
 = 1.2.1 =
 Fix intitial run bug where mte_thumbnail_ud was being incorrectly defined
