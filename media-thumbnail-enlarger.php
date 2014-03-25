@@ -48,7 +48,7 @@ function mte_custom_media_column_content( $column_name, $id ) {
 	
 }
 
-//
+// Fancy new icons
 function mte_change_mime_icon($icon, $mime = null, $post_id = null){
     $icon = str_replace( home_url().'/wp-includes/images/crystal/',  plugins_url('/icons/default/', __FILE__), $icon);
     $icon = str_replace( '.png',  '.svg', $icon);
