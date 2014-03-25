@@ -39,6 +39,9 @@ Not yet.
 
 == Changelog ==
 
+= 1.0.3 =
+* Fix column sizing bug
+
 = 1.0.2 =
 * Fix 1.0.1 partial deploy
 
