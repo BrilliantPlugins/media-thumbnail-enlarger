@@ -4,7 +4,7 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,10 @@ Or install WP_Thumb so they can be generated on the fly:
 http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
+
+= 1.1.1 =
+* Fix archive icon color
+* Tweak icon license text
 
 = 1.1 =
 * FAQ updates
