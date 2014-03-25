@@ -4,7 +4,7 @@ Plugin Name: Media Library Thumbnail Enhancer
 Plugin URI: http://ThoughtRefinery.com/
 Description: Enhances media library thumbnails by making them larger and replacing the bundled icons with scalable SVG versions
 Author: Nick Ciske (ThoughtRefinery)
-Version: 1.2.3
+Version: 1.2.4
 Author URI: http://thoughtrefinery.com/
 */
 
@@ -73,6 +73,10 @@ function mte_get_image_size(){
 // Size column to image
 function mte_admin_css(){
 	
+	echo '<style>';
+	echo '.attachment-preview.type-application img, .attachment-preview.type-audio img, .attachment-preview.type-video img, .attachment-preview.type-text img { width: auto; max-height: 105px; padding-top: 0; }';
+	echo '</style>';
+
 	$screen = get_current_screen();
 
 	if( $screen->base != 'upload' )

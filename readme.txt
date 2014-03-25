@@ -4,7 +4,7 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,8 +54,12 @@ http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
 
+= 1.2.4 =
+* Fix issue with misaligned icons in the insert media modal
+
 = 1.2.3 =
 * Revise name to better reflect additional features
+* Add banner
 
 = 1.2.2 =
 * Readme fixes
