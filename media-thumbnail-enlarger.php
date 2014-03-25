@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Media Library Thumbnail Enlarger
+Plugin Name: Media Library Thumbnail Enhancer
 Plugin URI: http://ThoughtRefinery.com/
-Description: Makes media library thumbnails match the WordPress thumbnail size or a custom size named 'mte_thumbnail'
+Description: Enhances media library thumbnails by making them larger and replacing the bundled icons with scalable SVG versions
 Author: Nick Ciske (ThoughtRefinery)
-Version: 1.2.2
+Version: 1.2.3
 Author URI: http://thoughtrefinery.com/
 */
 

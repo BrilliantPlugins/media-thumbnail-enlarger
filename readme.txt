@@ -1,15 +1,15 @@
-=== Media Library Thumbnail Enlarger ===
+=== Media Library Thumbnail Enhancer ===
 Contributors: nickciske
 Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Makes media library thumbnails match the WordPress thumbnail size or a custom size you define.
+Enhances media library thumbnails by making them larger and replacing the bundled icons with scalable SVG versions.
 
 == Description ==
 
@@ -53,6 +53,9 @@ Or install WP_Thumb so they can be generated on the fly:
 http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
+
+= 1.2.3 =
+* Revise name to better reflect additional features
 
 = 1.2.2 =
 * Readme fixes
