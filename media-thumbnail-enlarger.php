@@ -4,7 +4,7 @@ Plugin Name: Media Library Thumbnail Enhancer
 Plugin URI: http://ThoughtRefinery.com/
 Description: Enhances media library thumbnails by making them larger and replacing the bundled icons with scalable SVG versions
 Author: Nick Ciske (ThoughtRefinery)
-Version: 1.2.4
+Version: 1.3
 Author URI: http://thoughtrefinery.com/
 */
 
@@ -77,6 +77,17 @@ function mte_admin_css(){
 	echo '.attachment-preview.type-application img, .attachment-preview.type-audio img, .attachment-preview.type-video img, .attachment-preview.type-text img { width: auto; max-height: 105px; padding-top: 0; }';
 	echo '</style>';
 
+	// enqueue modal styles if option is set
+	if( get_option( 'mte_enlarge_modal_thumbs' ) ){
+		wp_enqueue_style('mte_enlarge_modal_thumbs', plugins_url('css/enlarge-modal-thumbs.css', __FILE__ ));
+	
+		$w = get_option( mte_get_image_size() . '_size_w' );
+
+		echo '<style>';
+		echo '.media-frame-content .attachment-preview { width: '.($w-1).'px  !important; height: '.($w-1).'px !important; }';
+		echo '</style>';
+	}
+
 	$screen = get_current_screen();
 
 	if( $screen->base != 'upload' )
@@ -90,6 +101,7 @@ function mte_admin_css(){
 	echo '.column-mte_thumbnail img{ width: auto; max-height: '.$h.'px; }';
 	echo '</style>';
 
+
 }
 
 // Add settings
@@ -100,6 +112,8 @@ function mte_register_setting() {
 	
 	register_setting( 'media', 'mte_thumbnail_ud_size_w', 'absint' ); 
 	register_setting( 'media', 'mte_thumbnail_ud_size_h', 'absint' ); 
+
+	register_setting( 'media', 'mte_enlarge_modal_thumbs', 'absint' ); 
 	
 	add_settings_field( 'mte_thumbnail_size', 'Media Library Thumbnails', 'mte_setting_display', 'media', 'default' );
 	
@@ -114,6 +128,10 @@ function mte_setting_display(){
 	<input name="mte_thumbnail_ud_size_w" type="number" step="1" min="0" id="mte_thumbnail_ud_size_w" value="<?php echo absint( get_option( 'mte_thumbnail_ud_size_w', 150 ) ); ?>" class="small-text">
 	<label for="mte_thumbnail_ud_size_h">Max Height</label>
 	<input name="mte_thumbnail_ud_size_h" type="number" step="1" min="0" id="mte_thumbnail_ud_size_h" value="<?php echo absint( get_option( 'mte_thumbnail_ud_size_h', 150 ) ); ?>" class="small-text">
+	<br>
+	<input name="mte_enlarge_modal_thumbs" type="checkbox" id="mte_enlarge_modal_thumbs" value="1" <?php checked(1, get_option('mte_enlarge_modal_thumbs'))?>>
+	<label for="mte_enlarge_modal_thumbs">Enlarge thumbnails in modal (pop-up) media library</label>
+
 	</fieldset>
 	
 	<?php

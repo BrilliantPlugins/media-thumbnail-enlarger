@@ -4,7 +4,7 @@ Donate link: http://thoughtrefinery.com/contact/say-thank-you/
 Tags: media library, thumbnail, column
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.2.4
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,9 @@ Or install WP_Thumb so they can be generated on the fly:
 http://wordpress.org/plugins/wp-thumb/
 
 == Changelog ==
+
+= 1.3 =
+* Add option to enalarge thumbnails in media library modal (pop-up)
 
 = 1.2.4 =
 * Fix issue with misaligned icons in the insert media modal
